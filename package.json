@@ -1,0 +1,14 @@
+{
+  "name": "qa-copilot-training-demo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Generic sandbox app and Selenium/Cucumber automation used to demo AI-assisted, spec-driven test automation in a QA training session",
+  "scripts": {
+    "start": "node server.js",
+    "test": "cucumber-js automation/features --require automation/features/step_definitions --require automation/features/support"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^10.3.1",
+    "selenium-webdriver": "^4.21.0"
+  }
+}
