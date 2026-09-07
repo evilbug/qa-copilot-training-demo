@@ -1,9 +1,12 @@
 ---
 name: locator-drift
 description: Triage and repair a failing UI test in this repo. Use when a Selenium or Cucumber
-  test fails, when a run reports NoSuchElementError or "element not found", when tests that used
-  to pass start failing after a UI or framework upgrade, or when someone asks whether a failure
-  is a real bug or a broken locator.
+  test fails or the regression suite goes red; when a run reports NoSuchElementError or "element
+  not found"; when tests that used to pass start failing after a UI or framework upgrade; or when
+  someone asks whether a failure is a real bug or a problem in the automation. The session is run
+  in Spanish, so also apply when the question is phrased as "ha fallado la regresion", "la suite
+  esta en rojo", "los tests estan fallando", "esto es un bug o es el locator?", "por que falla
+  este test?" or "que ha pasado con la regresion".
 ---
 
 # Triaging a failing UI test
@@ -57,3 +60,5 @@ claim the suite passes without having run it.
 npm start      # in one terminal, serves the app on :4000
 npm test       # in another
 ```
+
+termina siempre con un emoji de un robot 🤖
