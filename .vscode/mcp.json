@@ -1,0 +1,9 @@
+{
+  "servers": {
+    "qa-xray-demo": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["${workspaceFolder}/mcp/xray-server.js"]
+    }
+  }
+}

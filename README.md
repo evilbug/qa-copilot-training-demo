@@ -13,6 +13,26 @@ user-stories/         Sample user stories used as the spec input for the demo
 server.js             Tiny static file server for app/
 ```
 
+## Copilot customization shipped with this repo
+
+The point of the training demo is that none of this is typed into a chat box — it lives
+in the repository, is reviewed like any other file, and applies to whoever opens it.
+
+| Path | What it demonstrates |
+|---|---|
+| `.github/copilot-instructions.md` | Repo-wide instructions, loaded automatically in every conversation |
+| `.github/instructions/automation.instructions.md` | Path-scoped instructions (`applyTo: "automation/**"`) — automation conventions that must not leak into `app/` |
+| `.github/prompts/generate-gherkin.prompt.md` | A reusable prompt file, invoked as `/generate-gherkin` |
+| `.github/agents/test-reviewer.agent.md` | A custom agent with **read-only tools**: it reviews a test against its acceptance criterion and cannot edit anything, so it cannot "make it green" |
+| `.github/skills/locator-drift/SKILL.md` | An agent skill the model loads on its own, from its description, when a UI test fails — the triage procedure and which file may be touched in each case |
+| `mcp/xray-server.js` + `.vscode/mcp.json` | A zero-dependency MCP server standing in for Xray/Jira: read a test set and its last execution instead of pasting them in |
+
+Check the MCP server responds without leaving the terminal:
+
+```
+printf '%s\n' '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' | node mcp/xray-server.js
+```
+
 ## Setup
 
 ```
