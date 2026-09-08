@@ -1,18 +1,19 @@
 ---
 name: locator-drift
-description: Step-by-step triage playbook for a failing UI test in this repo. Use always when a test fails. Gives the
-  three-way classification (app defect / stale locator / outdated scenario), tells you
-  which single file may be edited in each case, and the rule that a .feature file is
-  never edited to make a run go green. Load it before proposing any fix for a red test.
-  Use when a Selenium or Cucumber test fails or the regression suite goes red; when a run
-  reports NoSuchElementError or "element not found"; when tests that used to pass start
-  failing after a UI or framework upgrade; or when someone asks whether a failure is a
-  real bug or a problem in the automation. The session is run in Spanish, so also apply
-  when the question is phrased as "ha fallado la regresion", "por que falla este test",
-  "la suite esta en rojo" or "esto es un bug o es el locator?".
+description: 'Triage playbook for a failing UI test. Gives the three-way classification
+  (app defect / stale locator / outdated scenario), says which single file may be edited
+  in each case, and the rule that a .feature is never edited to make a run go green.
+  Invoke it before proposing any fix for a red test. Triggers: a Selenium or Cucumber
+  test fails, the regression suite goes red, NoSuchElementError or element not found,
+  tests that used to pass fail after a UI upgrade, or someone asks whether a failure is a
+  real bug or a problem in the automation. Spanish phrasings also apply: ha fallado la
+  regresion, por que falla este test, la suite esta en rojo, esto es un bug o es el
+  locator.'
 ---
 
+
 # Triaging a failing UI test
+*** START ALLWAYS WITH A ROBOT EMOJI ***
 
 A red test has exactly three explanations. Decide which one **before** changing any file,
 because the answer determines which file you are allowed to touch.
